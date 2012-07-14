@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <script type="text/javascript"  src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=visualization"></script>
@@ -18,11 +17,11 @@
    
 
       function initialize() {
-           var config = {
+           var heatOptions = {
     "radius": 30,
     "element": "map_canvas",
     "visible": true,
-    "opacity": 40,
+    "opacity": 60,
     "gradient": { 0.45: "rgb(0,0,255)", 0.55: "rgb(0,255,255)", 0.65: "rgb(0,255,0)", 0.95: "yellow", 1.0: "rgb(255,0,0)" }
       };
 
@@ -34,7 +33,7 @@
           mapTypeId: google.maps.MapTypeId.ROADMAP};
 
         map = new google.maps.Map(document.getElementById("map_canvas"),myOptions);
-        heatmap = new HeatmapOverlay(map, {"radius":30, "visible":true, "opacity":60, "gradient": { 0.45: "rgb(0,0,255)", 0.55: "rgb(0,255,255)", 0.65: "rgb(0,255,0)", 0.95: "yellow", 1.0: "rgb(255,0,0)" }});
+        heatmap = new HeatmapOverlay(map, heatOptions);
         google.maps.event.addListener(map, "idle", function(){
         //heatmap.setDataSet(testData);
         });
